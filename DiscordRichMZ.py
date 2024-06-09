@@ -39,7 +39,7 @@ with open(config_path, 'r', encoding='utf-8') as f:
 RPC = Presence(config["client_id"])
 RPC.connect()  # Conectar con Discord
 
-# Imprimir para confirmar conexión
+# Confirmación de conexión en la consola
 print("Connectado")
 
 # Fijar el tiempo de inicio
