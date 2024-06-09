@@ -7,22 +7,23 @@ import pystray
 from pystray import MenuItem as item
 from PIL import Image
 
-# Ruta del archivo de configuración
+# Ruta del archivo de configuración, esto es lo único que hay que tocar
 config_path = "config.json"
 
 # Valores predeterminados de la configuración
 default_config = {
     "client_id": "ID_CLIENTE_DISCORD",
-    "state": "Texto de ejemplo para el estado",
-    "details": "Texto de ejemplo para detalles",
+    "state": "Texto de default",
+    "details": "Texto default",
     "large_image": "Nombre_imagen",
     "large_text": "Texto_imagen",
     "small_image": "Nombre_imagen",
     "small_text": "Texto_imagen",
     "party_id": "ID_PARTY_DISCORD",
+    # Solamente se pueden dejar 2 botones en discord
     "buttons": [
-        {"label": "Mis proyectos", "url": "https://proximamente.com"},
-        {"label": "Discord", "url": "https://proximamente.com"}
+        {"label": "Botón 1", "url": "https://proximamente.com"},
+        {"label": "Botón 2", "url": "https://proximamente.com"}
     ]
 }
 

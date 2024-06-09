@@ -1,3 +1,7 @@
+# Este archivo sirve a la hora de compilarlo en la consola con;
+# python setup.py build
+# esto genera la carpeta con el ejecutable
+
 from cx_Freeze import setup, Executable
 import sys
 
@@ -16,7 +20,7 @@ files = ['config.json', 'icon.ico']
 # Configuración de la build
 setup(
     name='Presencia de Discord',
-    version='0.4',
+    version='0.6',
     description='Mostrar en discord una presencia personalizada',
     options={"build_exe": {"include_files": files}},
     executables=[Executable(script, base=base, icon=icon)]
