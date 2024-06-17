@@ -7,7 +7,6 @@ import pystray
 from pystray import MenuItem as item
 from PIL import Image
 import pyfiglet
-from plyer import notification
 
 # Creditos y descripción en la consola
 console = pyfiglet.figlet_format("MZ dev")
@@ -20,14 +19,6 @@ print('https://github.com/Masterez-1/Discord-Rich')
 print()
 print('--------------------------------------------')
 
-# Notifición en widows cuando se inicia el programa
-def send_notification(title, message):
-    notification.notify(
-        title=title,
-        message=message,
-        app_name='Discord rich'
-    )
-send_notification('Discord rich MZ', '¡Se inicio la presencia en discord!')
 
 
 # Ruta del archivo de configuración, esto es lo único que hay que tocar
