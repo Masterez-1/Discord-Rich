@@ -7,7 +7,7 @@ import sys
 
 # Nombre del archivo de tu script Python e icono
 script = 'DiscordRichMZ.py'
-icon = 'icon.ico'  # Asegúrate de que la ruta del icono es correcta
+icon = 'icon.ico'  # Icono (La ruta es la default, si la pones en carpeta asegurate de poner el directorio)
 
 # Definir la base en función del sistema operativo
 base = None
@@ -20,7 +20,7 @@ files = ['config.json', 'icon.ico']
 # Configuración de la build
 setup(
     name='Presencia de Discord',
-    version='0.6',
+    version='2.0',
     description='Mostrar en discord una presencia personalizada',
     options={"build_exe": {"include_files": files}},
     executables=[Executable(script, base=base, icon=icon)]
