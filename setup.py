@@ -21,7 +21,7 @@ files = ['config.json', 'icon.ico']
 setup(
     name='Presencia de Discord',
     version='2.0',
-    description='Mostrar en discord una presencia personalizada',
+    description='Discord Rich MZ',
     options={"build_exe": {"include_files": files}},
     executables=[Executable(script, base=base, icon=icon)]
 )
