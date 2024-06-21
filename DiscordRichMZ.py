@@ -8,19 +8,6 @@ from pystray import MenuItem as item
 from PIL import Image
 import pyfiglet
 
-# Creditos y descripción en la consola
-console = pyfiglet.figlet_format("MZ dev")
-console_2 = pyfiglet.figlet_format("Discord Rich")
-print(console, console_2)
-print('        ↓    Repositorio en Github    ↓     ')
-print('--------------------------------------------')
-print()
-print('https://github.com/Masterez-1/Discord-Rich')
-print()
-print('--------------------------------------------')
-
-
-
 # Ruta del archivo de configuración, esto es lo único que hay que tocar
 config_path = "config.json"
 
@@ -40,25 +27,6 @@ default_config = {
         {"label": "Botón 2", "url": "https://proximamente.com"}
     ]
 }
-
-# Crear el archivo de configuración si no existe
-if not os.path.exists(config_path):
-    with open(config_path, 'w', encoding='utf-8') as f:
-        json.dump(default_config, f, ensure_ascii=False, indent=4)
-
-# Leer la configuración
-with open(config_path, 'r', encoding='utf-8') as f:
-    config = json.load(f)
-
-# Crear una instancia de Presence usando el client_id del archivo de configuración
-RPC = Presence(config["client_id"])
-RPC.connect()  # Conectar con Discord
-
-# Confirmación de conexión en la consola
-print("¡Connectado a discord!")
-
-# Fijar el tiempo de inicio
-start_time = time.time()
 
 # Función para actualizar la presencia
 def update_presence():
@@ -92,9 +60,6 @@ def setup_tray():
     )
     icon.run()
 
-# Actualizar la presencia inicialmente
-update_presence()
-
 # Mantener el script corriendo y actualizar la presencia periódicamente
 def presence_loop():
     try:
@@ -104,10 +69,44 @@ def presence_loop():
     except KeyboardInterrupt:
         print("Desconectado")
 
-# Ejecutar el loop de presencia en un hilo separado
-thread = threading.Thread(target=presence_loop)
-thread.daemon = True
-thread.start()
+if __name__ == "__main__":
+    # Creditos y descripción en la consola
+    console = pyfiglet.figlet_format("MZ dev")
+    console_2 = pyfiglet.figlet_format("Discord Rich")
+    print(console, console_2)
+    print("        ↓    Repositorio en Github    ↓     ")
+    print("--------------------------------------------")
+    print()
+    print("https://github.com/Masterez-1/Discord-Rich")
+    print()
+    print("--------------------------------------------")
 
-# Iniciar el icono de la bandeja
-setup_tray()
+    # Crear el archivo de configuración si no existe
+    if not os.path.exists(config_path):
+        with open(config_path, "w", encoding="utf-8") as f:
+            json.dump(default_config, f, ensure_ascii=False, indent=4)
+
+    # Leer la configuración
+    with open(config_path, "r", encoding="utf-8") as f:
+        config = json.load(f)
+
+    # Crear una instancia de Presence usando el client_id del archivo de configuración
+    RPC = Presence(config["client_id"])
+    RPC.connect()  # Conectar con Discord
+
+    # Confirmación de conexión en la consola
+    print("¡Connectado a discord!")
+
+    # Fijar el tiempo de inicio
+    start_time = time.time()
+
+    # Actualizar la presencia inicialmente
+    update_presence()
+
+    # Ejecutar el loop de presencia en un hilo separado
+    thread = threading.Thread(target=presence_loop)
+    thread.daemon = True
+    thread.start()
+
+    # Iniciar el icono de la bandeja
+    setup_tray()
