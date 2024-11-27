@@ -2,6 +2,10 @@
 
 Este proyecto permite integrar un **Discord Rich Presence** altamente configurable en tu aplicación utilizando Python. Es ideal para mostrar detalles personalizados en tu perfil de Discord, como estado, imágenes, botones y más.
 
+<img src="https://media.discordapp.net/attachments/995115932756217887/1309568799531466813/UFiRY2d.png?ex=6747fd3c&is=6746abbc&hm=02c6c1da14e4c863efd10be03a40ef8e63f58abbfc0847f33025eca924a31aaf&=&format=webp&quality=lossless&width=341&height=216" alt="Un icono descriptivo" style="pointer-events: none;">
+
+
+
 ---
 
 ## 🎯 Características
@@ -111,4 +115,5 @@ Las contribuciones son bienvenidas. Por favor, sigue estas pautas:
 - **Repositorio**: [Discord Rich](https://github.com/Masterez-1/Discord-Rich)
 
 ---
+
 
